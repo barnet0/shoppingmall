@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+		location="D:\tools\mysql-connector-java-5.1.6-bin.jar" />
+	<context id="context1" targetRuntime="MyBatis3">
+		<plugin
+			type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<plugin
+			type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />
+		<plugin
+			type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+			<property name="searchString" value="Example$" />
+			<property name="replaceString" value="Template" />
+		</plugin>
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" /><!-- 是否取消注释 -->
+			<property name="suppressDate" value="false" /> <!-- 是否生成注释代时间戳 -->
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/mmall_learning"
+			userId="root" password="1234" />
+
+		<javaModelGenerator targetPackage="com.shoppingmall.zsy.entity"
+			targetProject="zsy" />
+			
+		<sqlMapGenerator targetPackage="com.shoppingmall.zsy.mapper"
+			targetProject="zsy" />
+			
+		<javaClientGenerator
+			targetPackage="com.shoppingmall.zsy.mapper"
+			targetProject="zsy" type="XMLMAPPER" />
+			
+		<table tableName="mmall_cart" domainObjectName="MmallCart">
+		</table>
+		<table tableName="mmall_category" domainObjectName="MmallCategory">
+		</table>
+		<table tableName="mmall_order" domainObjectName="MmallOrder">
+		</table>
+		<table tableName="mmall_order_item" domainObjectName="MmallOrderItem">
+		</table>
+		<table tableName="mmall_pay_info" domainObjectName="MmallPayInfo">
+		</table>
+		<table tableName="mmall_product" domainObjectName="MmallProduct">
+		</table>
+		<table tableName="mmall_shipping" domainObjectName="MmallShipping">
+		</table>
+		<table tableName="mmall_user" domainObjectName="MmallUser">
+		</table>
+
+
+	</context>
+</generatorConfiguration>
